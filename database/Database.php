@@ -14,7 +14,7 @@ class Database
         $server = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "MRM_COVID19";
+        $dbname = "mrm_covid19";
 
         // Create connection
         $DBConnect = mysqli_connect($server, $username, $password, $dbname);
