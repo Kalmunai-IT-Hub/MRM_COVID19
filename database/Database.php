@@ -14,7 +14,7 @@ class Database
         $server = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "inventorysys";
+        $dbname = "MRM_COVID19";
 
         // Create connection
         $DBConnect = mysqli_connect($server, $username, $password, $dbname);
