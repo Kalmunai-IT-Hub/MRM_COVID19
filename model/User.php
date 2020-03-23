@@ -25,11 +25,9 @@ class User
         if ($Result) {
             return $this->con->insert_id;
             return true;
-            $_SESSION["SuccessMessage"] = "Post Published Successfully..!";
 
         } else {
-            return "SOME_ERROR";
-            $_SESSION["SuccessMessage"] = "Post Published Successfully..!";
+            return "ERROR";
         }
     }
 

@@ -9,7 +9,8 @@ include_once("../sessions.php");
  * Project MRM_COVID19
  **/
 
-if (isset($_POST["register_button"])) {
+if(isset($_POST["Submit"])){
+
     $name = $_POST["name"];
     $nic = $_POST["nic"];
     $address = $_POST["address"];
@@ -18,13 +19,13 @@ if (isset($_POST["register_button"])) {
     $user_type = $_POST["user_type"];
 
     $obj = new User();
-    $result = $obj->createUser($name,$nic,$address,$mobile,$email,$password,$user_type);
-    //echo $result = $obj->createUser("safnaj2","962872352v","Zam Zam Road","0777974207","1234","Seller");
+    $result = $obj->createUser($name,$nic,$address,$mobile,$password,$user_type);
 
     if($result == true){
-        $_SESSION["SuccessMessage"] = "Post Published Successfully..!";
+        header('Location: ../register.php?register=success');
     }else{
-        $_SESSION["ErrorMessage"] = "Post Published Successfully..!";
+        echo "<script type=\"text/javascript\">alert('Error..!');</script>";
     }
+
 
 }
