@@ -22,3 +22,5 @@
         </li>
     </ul>
 </nav>
+
+<body class="sb-nav-fixed">

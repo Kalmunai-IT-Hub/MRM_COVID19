@@ -12,23 +12,39 @@ class User
 
     function __construct()
     {
-        include_once("../database/Database.php"); //DbConnection
+        include_once("./database/Database.php"); //DbConnection
         $db = new Database();
         $this->con = $db->connect();
 
     }
 
-    public function createUser($name,$nic,$address,$phone_no,$password,$usertype){
-        $PreparedStatement = $this->con->prepare("INSERT INTO `users`(`name`, `nic`, `address`, `phone_no`, `password`, `user_type`) VALUES (?,?,?,?,?,?)");
-        $PreparedStatement->bind_param("ssssss", $name, $nic, $address, $phone_no, $password, $usertype);
-        $Result = $PreparedStatement->execute() or die($this->con->error);
-        if ($Result) {
-            return $this->con->insert_id;
-            return true;
-
-        } else {
-            return "ERROR";
+    //User is Already Registered or Not
+    private function phoneNoExists($mobile){
+        $PreparedStatement = $this->con->prepare("SELECT id FROM users WHERE phone_no = ?");
+        $PreparedStatement->bind_param("s",$mobile);
+        $PreparedStatement->execute() or die ($this->con->error);
+        $Result = $PreparedStatement->get_result();
+        if($Result->num_rows > 0){
+            return 1;
+        }else{
+            return 0;
         }
     }
+
+    public function createUser($name,$nic,$address,$phone_no,$password,$usertype){
+//        if($this->emailExists($phone_no)){
+//            return "PHONE_NO_ALREADY_EXISTS";
+//        }else{
+            $PreparedStatement = $this->con->prepare("INSERT INTO `users`(`name`, `nic`, `address`, `phone_no`, `password`, `user_type`) VALUES (?,?,?,?,?,?)");
+            $PreparedStatement->bind_param("ssssss", $name, $nic, $address, $phone_no, $password, $usertype);
+            $Result = $PreparedStatement->execute() or die($this->con->error);
+            if ($Result) {
+                return $this->con->insert_id;
+                return true;
+            } else {
+                return "ERROR";
+            }
+        }
+   // }
 
 }

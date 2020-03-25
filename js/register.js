@@ -1,5 +1,9 @@
 $('#submit_form').click(function(e) {
-    e.preventDefault();
+    var validate = formValidation();
+
+    if(validate != true){
+        e.preventDefault();
+    }
 });
 
 

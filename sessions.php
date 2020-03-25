@@ -5,6 +5,7 @@
  * Project MRM_COVID19
  **/
 
+
 session_start();
 function ErrorMessage(){
     if(isset($_SESSION["ErrorMessage"])){
@@ -33,5 +34,7 @@ function SuccessMessage(){
         return $Output;
     }
 }
+
+
 
 ?>

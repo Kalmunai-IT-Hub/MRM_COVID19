@@ -1,12 +1,32 @@
 <?php include_once("includes/header.php"); ?>
 <?php include_once("sessions.php"); ?>
+<?php include_once("model/User.php"); ?>
+
 <?php
-    if ( isset($_GET['register']) && $_GET['register'] == "success" )
-    {
+
+if(isset($_POST["Submit"])){
+
+    $name = $_POST["name"];
+    $nic = $_POST["nic"];
+    $address = $_POST["address"];
+    $mobile = $_POST["mobile"];
+    $password = $_POST["password"];
+    $user_type = $_POST["user_type"];
+
+    $obj = new User();
+    $result = $obj->createUser($name,$nic,$address,$mobile,$password,$user_type);
+
+    if($result == true){
         $_SESSION["SuccessMessage"] = "User Registered Successfully..!";
+       // header('Location: register.php');
+    }else{
+        $_SESSION["ErrorMessage"] = "Something Went Wrong..!";
+        //header('Location: register.php');
     }
     echo ErrorMessage();
     echo SuccessMessage();
+}
+
 ?>
 
     <body class="bg-primary">
@@ -19,7 +39,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">User Registration</h3></div>
                                     <div class="card-body">
-                                        <form method="post" action="./controller/UserController.php" enctype="multipart/form-data">
+                                        <form method="post" action="register.php" enctype="multipart/form-data">
                                             <div class="form-group"><label class="small mb-1">Name</label>
                                                 <input class="form-control" id="name" name="name" type="text" placeholder="Enter Your Name" />
                                                 <small id="name_error" class="form-text text-muted"></small>

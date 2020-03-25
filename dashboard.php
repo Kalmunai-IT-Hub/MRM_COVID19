@@ -11,18 +11,15 @@
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="dashboard.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard</a>
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Dashboard</a>
+                            <a class="nav-link" href="store-details.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Store</a>
                             <a class="nav-link" href="orders.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Orders </a>
-
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Orders</a>
                             <a class="nav-link" href="products.html">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Products </a>
-                                <a class="nav-link" href="setting.html">
-                                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                    Setting </a>
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Products</a>
+                            <a class="nav-link" href="setting.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Setting</a>
                             
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
@@ -42,19 +39,11 @@
                                     </div>
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts</a
-                            ><a class="nav-link" href="tables.html"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables</a
-                            >
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        Ahamed Safnaj
                     </div>
                 </nav>
             </div>
