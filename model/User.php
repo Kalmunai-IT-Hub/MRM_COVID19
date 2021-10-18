@@ -3,6 +3,8 @@
 /**
  * Author Safnaj on 3/23/2020
  * Project MRM_COVID19
+ * Edited By: Suhail Jamaldeen 
+ * 10/18/2021
  **/
 
 
@@ -31,12 +33,12 @@ class User
         }
     }
 
-    public function createUser($name,$nic,$address,$phone_no,$password,$usertype){
+    public function createUser($name,$nic,$address,$phone_no,$password,$user_type){
 //        if($this->emailExists($phone_no)){
 //            return "PHONE_NO_ALREADY_EXISTS";
 //        }else{
             $PreparedStatement = $this->con->prepare("INSERT INTO `users`(`name`, `nic`, `address`, `phone_no`, `password`, `user_type`) VALUES (?,?,?,?,?,?)");
-            $PreparedStatement->bind_param("ssssss", $name, $nic, $address, $phone_no, $password, $usertype);
+            $PreparedStatement->bind_param("ssssss", $name, $nic, $address, $phone_no, $password, $user_type);
             $Result = $PreparedStatement->execute() or die($this->con->error);
             if ($Result) {
                 return $this->con->insert_id;
