@@ -50,7 +50,7 @@ function formValidation(){
         $("#password").addClass("border-danger");
         $("#pwd_error").html("<span class='text-danger'>Please Enter Password</span>");
     }
-    else if ($("#password").val() != "") {
+    else if ($("#password").val() != "" && $("#password").val() != undefined) {
         $("#password").removeClass("border-danger");
         $("#pwd_error").html("");
     }
@@ -58,7 +58,7 @@ function formValidation(){
         $("#user_type").addClass("border-danger");
         $("#type_error").html("<span class='text-danger'>Please Choose User Type</span>");
     }
-    else if ($("#user_type").val() != "0") {
+    else if ($("#user_type").val() != undefined && $("#user_type").val() != null && $("#user_type").val() != "0" ||  ) {
         $("#user_type").removeClass("border-danger");
         $("#type_error").html("");
     }
